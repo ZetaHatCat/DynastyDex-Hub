@@ -1,5 +1,5 @@
 :root {
-  --bg:#060509; --bar:#0a090d; --card:#0f0e13; --card-img:#09080c;
+  --bg:#09070e; --bar:#0a090d; --card:#0f0e13; --card-img:#09080c;
   --line:#1c1a23; --text:#ecebf0; --muted:#8a8794; --accent:#cdbfe0; --join:#5865f2;
 }
 :root[data-theme="light"] {
