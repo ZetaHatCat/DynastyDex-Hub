@@ -15,7 +15,7 @@ function getType(r) {
 function img(d) {
   if (d.image) return d.image;
   const l = (d.name[0] || "?").toUpperCase();
-  const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><defs><radialGradient id='g'><stop offset='0' stop-color='#6b4a8a'/><stop offset='1' stop-color='#241c33'/></radialGradient></defs><rect width='400' height='400' fill='url(#g)'/><text x='200' y='250' font-size='160' text-anchor='middle' fill='#fff' fill-opacity='.7' font-family='sans-serif' font-weight='700'>${l}</text></svg>`;
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><defs><radialGradient id='g'><stop offset='0' stop-color='#3a3940'/><stop offset='1' stop-color='#17161a'/></radialGradient></defs><rect width='400' height='400' fill='url(#g)'/><text x='200' y='250' font-size='160' text-anchor='middle' fill='#fff' fill-opacity='.7' font-family='sans-serif' font-weight='700'>${l}</text></svg>`;
   return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
 }
 
