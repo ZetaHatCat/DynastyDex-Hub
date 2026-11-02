@@ -1,6 +1,6 @@
 :root {
-  --bg:#101013; --bar:#151418; --card:#1a191e; --card-img:#141317;
-  --line:#26242b; --text:#ececf0; --muted:#8e8c96; --accent:#e4e2ea; --join:#5865f2;
+  --bg:#09070e; --bar:#0e0b15; --card:#14101d; --card-img:#0d0a14;
+  --line:#271e3a; --text:#efeaf7; --muted:#9a8fb3; --accent:#c9a0f0; --join:#5865f2;
 }
 :root[data-theme="light"] {
   --bg:#f3f3f5; --bar:#ffffff; --card:#ffffff; --card-img:#e9e9ee;
