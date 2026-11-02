@@ -1,7 +1,6 @@
 const $ = id => document.getElementById(id);
 const grid = $("grid"), overlay = $("overlay");
 
-/* Tipo según rareza */
 function getType(r) {
   if (r <= 0.5) return "Heavenly";
   if (r <= 3)   return "Mythic";
@@ -11,19 +10,15 @@ function getType(r) {
   return "Common";
 }
 
-/* Imagen de relleno si no hay una */
 function img(d) {
   if (d.image) return d.image;
   const l = (d.name[0] || "?").toUpperCase();
-  const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><defs><radialGradient id='g'><stop offset='0' stop-color='#2b2633'/><stop offset='1' stop-color='#0b0a0e'/></radialGradient></defs><rect width='400' height='400' fill='url(#g)'/><text x='200' y='250' font-size='160' text-anchor='middle' fill='#fff' fill-opacity='.7' font-family='sans-serif' font-weight='700'>${l}</text></svg>`;
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><text x='200' y='250' font-size='160' text-anchor='middle' fill='#fff' fill-opacity='.35' font-family='sans-serif' font-weight='600'>${l}</text></svg>`;
   return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
 }
 
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-
-function pulse(el, cls) {
-  el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls);
-}
+function pulse(el, cls) { el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); }
 
 function render(list) {
   $("count").textContent = `${list.length} entries · by rarity`;
@@ -59,9 +54,7 @@ grid.addEventListener("click", e => {
   pulse(card, "pulse");
   setTimeout(() => openModal(card.dataset.i), 180);
 });
-grid.addEventListener("keydown", e => {
-  if (e.key === "Enter") e.target.click();
-});
+grid.addEventListener("keydown", e => { if (e.key === "Enter") e.target.click(); });
 $("closeBtn").onclick = closeModal;
 overlay.addEventListener("click", e => { if (e.target === overlay) closeModal(); });
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
@@ -71,7 +64,6 @@ $("search").addEventListener("input", e => {
   render(DYNASTIES.filter(d => d.name.toLowerCase().includes(q)));
 });
 
-/* Tema claro / oscuro */
 function setTheme(t) {
   document.documentElement.dataset.theme = t;
   try { localStorage.setItem("theme", t); } catch (_) {}
