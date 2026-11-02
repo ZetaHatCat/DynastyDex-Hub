@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DynastyDex Hub › Wiki</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">◔‿◔</span>
+      <span class="brand-name">DynastyDex Hub › Wiki</span>
+    </div>
+    <div class="actions">
+      <button id="themeBtn" class="theme-btn" aria-label="Cambiar tema"></button>
+      <a id="joinBtn" class="join-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.3.6a18 18 0 0 0-6.2 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4C.6 9 0 13.5.3 17.9A19.9 19.9 0 0 0 6.4 21l1.3-2.1c-.7-.3-1.4-.6-2-1l.5-.4a14 14 0 0 0 12.2 0l.5.4c-.6.4-1.300.7-2 1L18 21a19.9 19.9 0 0 0 6-3.100c.4-5.100-.7-9.600-3.700-13.500ZM8.700 15.200c-1.200 0-2.200-1.100-2.200-2.400s1-2.400 2.200-2.400 2.200 1.100 2.200 2.400-1 2.400-2.200 2.400Zm6.600 0c-1.200 0-2.200-1.100-2.200-2.400s1-2.400 2.200-2.400 2.200 1.100 2.200 2.400-1 2.400-2.200 2.400Z"/></svg>
+        <span>Join the server</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="search">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.500-3.500"/></svg>
+      <input id="search" type="search" placeholder="Search Dynasties" autocomplete="off">
+    </div>
+    <div class="count" id="count"></div>
+    <section class="grid" id="grid"></section>
+  </main>
+
+  <div class="overlay" id="overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+      <div class="modal-head">
+        <h2 id="mTitle"></h2>
+        <button id="closeBtn" class="close" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-img"><img id="mImg" alt=""></div>
+        <div class="modal-info">
+          <div class="field-row">
+            <div class="field"><span class="label">Rarity</span><span class="value" id="mRarity"></span></div>
+            <div class="field"><span class="label">Artist</span><span class="value sm" id="mArtist"></span></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><span class="label">Type</span><span class="value" id="mType"></span></div>
+          </div>
+          <p class="ability-title" id="mAbilityTitle"></p>
+          <p class="ability-text" id="mAbilityText"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
